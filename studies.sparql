@@ -1,7 +1,7 @@
 #+ enumerate:
-#+	- effectSize: 
-#+		- http://example.org/high
-#+		- http://example.org/high
+#+ - effectSize: 
+#+  - http://example.org/high
+#+  - http://example.org/high
 #+ endpoint: https://api.druid.datalegend.net/datasets/lisestork/SocialHistoryClaims/services/SocialHistoryClaims/sparql
 
 #select a micro-claim related to dependent variable X, and independent variable Y, and show the literature related to the claim, and the confidence values 
