@@ -13,7 +13,7 @@ PREFIX iisgv: <https://iisg.amsterdam/vocab/>
 select distinct ?wkt ?claim where { 
 	?claim :macro-levelAssociation/rdf:subject thesoz:10050647 ;
 	       :macro-levelAssociation/rdf:object thesoz:10048839 ;
-           :spatialContext ?capital .
-    ?country iisgv:capital ?capital ; 
+           :spatialContext ?_capital_iri .
+    ?country iisgv:capital ?_capital_iri ; 
     		geo:hasGeometry/geo:asWKT ?wkt
 } 
