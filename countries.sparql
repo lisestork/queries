@@ -4,7 +4,6 @@
 #+     - https://iisg.amsterdam/resource/capital/Stockholm
 #+     - https://iisg.amsterdam/resource/capital/Paris
 
-
 PREFIX : <http://example.org/>
 PREFIX thesoz: <http://lod.gesis.org/thesoz/concept/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
