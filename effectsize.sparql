@@ -1,5 +1,5 @@
 #+ enumerate:
-#+ - ?_effectSize_iri: 
+#+ - ?_effectsize_iri: 
 #+  - http://example.org/high
 #+  - http://example.org/low
 
