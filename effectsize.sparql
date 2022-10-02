@@ -13,5 +13,5 @@ select distinct ?source ?variable ?effectSize where {
 	?claim :dependentVariable/:measuredVariable ?variable ;
            :dependentVariable/:proxyFor thesoz:10048839 ; 
            :source/rdfs:label ?source ;
-           :effectSize ?effectSize .
+           :effectSize ?effectsize .
 } 
