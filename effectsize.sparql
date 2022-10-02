@@ -1,7 +1,7 @@
 #+ enumerate:
 #+ - ?_effectSize_iri: 
 #+  - http://example.org/high
-#+  - http://example.org/Low
+#+  - http://example.org/low
 
 PREFIX : <http://example.org/>
 PREFIX thesoz: <http://lod.gesis.org/thesoz/concept/>
