@@ -15,3 +15,4 @@ select distinct ?source ?variable where {
            :source/rdfs:label ?source ;
            :effectSize ?effectsize .
 } 
+
