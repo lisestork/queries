@@ -1,0 +1,15 @@
+#+ enumerate: 
+#+ - socialgroup 
+#+    - http://example.org/low
+#+    - http://example.org/high
+
+
+PREFIX : <http://example.org/>
+CONSTRUCT {
+  ?claim :socialGroup ?_socialgroup_iri . 
+  ?_socialgroup_iri ?pred ?obj .
+}
+WHERE {
+  ?claim :socialGroup ?_socialgroup_iri . 
+  ?_socialgroup_iri ?pred ?obj .     
+} 
