@@ -1,14 +1,16 @@
 #+ enumerate: 
-#+ - agegroup:
+#+ - groupattribute:
 #+    - http://example.org/children
 #+    - http://example.org/adolescents
+#+    - http://example.org/high
+#+    - http://example.org/low
 
 PREFIX : <http://example.org/>
 CONSTRUCT {
-  ?group :ageCategory ?_agegroup_iri .
-  ?group ?pred ?obj .
+  ?claim :socialGroup ?group .
+  ?group ?attribute ?_groupattribute_iri .
 }
 WHERE {
-  ?group :ageCategory ?_agegroup_iri .     
-  ?group ?pred ?obj .
+  ?claim :socialGroup ?group .     
+  ?group ?attribute ?_groupattribute_iri .
 } 
