@@ -7,9 +7,10 @@
 
 PREFIX : <http://example.org/>
 CONSTRUCT {
-  ?group ?has ?attribute .
+  ?group ?pred ?obj .
 }
 WHERE {
   ?claim :socialGroup ?group .     
-  ?group ?has ?_groupattribute_iri .
+  ?group ?att ?_groupattribute_iri .
+  ?group ?pred ?obj . 
 } 
