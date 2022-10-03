@@ -7,7 +7,6 @@
 
 PREFIX : <http://example.org/>
 CONSTRUCT {
-  ?claim :socialGroup ?group .
   ?group ?attribute ?_groupattribute_iri .
 }
 WHERE {
