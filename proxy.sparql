@@ -1,0 +1,23 @@
+#+ enumerate: 
+#+ - proxy: 
+#+    - http://lod.gesis.org/thesoz/concept/10050647
+#+    - http://lod.gesis.org/thesoz/concept/10048839
+
+
+#what is the temporal coverage of hypothesis related to dep var X
+PREFIX thesoz: <http://lod.gesis.org/thesoz/concept/>
+PREFIX ex: <http://example.org/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?eventDescription ?proxy2 ?proxy1 ?eventLabel ?eventStart ?eventEnd WHERE {
+  ?eventDescription ex:atTime ?time .	
+  ?time time:hasBeginning/time:inXSDgYear ?eventStart . 
+  ?time time:hasEnd/time:inXSDgYear ?eventEnd . 
+  ?eventDescription ex:independentVariable/ex:proxyFor ?proxy1 . 
+  thesoz:10050647 rdfs:label ?inVar . 
+  ?eventDescription ex:dependentVariable/ex:proxyFor ?_proxy_iri . 
+  ?_proxy_iri rdfs:label ?depVar . 
+  BIND(CONCAT(STR(?inVar),' influences ',STR(?depVar)) as ?eventLabel)
+  
+}
