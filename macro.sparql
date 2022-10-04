@@ -1,8 +1,8 @@
 #+ endpoint: https://api.druid.datalegend.net/datasets/lisestork/SocialHistoryClaims/services/SocialHistoryClaims/sparql
 #+ enumerate:
-#+   - capital:
-#+     - https://iisg.amsterdam/resource/capital/Stockholm
-#+     - https://iisg.amsterdam/resource/capital/Paris
+#+   - macro:
+#+    - http://lod.gesis.org/thesoz/concept/10050647
+#+    - http://lod.gesis.org/thesoz/concept/10048839
 
 PREFIX : <http://example.org/>
 PREFIX thesoz: <http://lod.gesis.org/thesoz/concept/>
@@ -10,10 +10,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX iisgv: <https://iisg.amsterdam/vocab/>
-select distinct ?wkt ?claim where { 
-	?claim :macro-levelAssociation/rdf:subject thesoz:10050647 ;
-	       :macro-levelAssociation/rdf:object thesoz:10048839 ;
-           :spatialContext ?_capital_iri .
-    ?country iisgv:capital ?_capital_iri ; 
+select distinct ?wkt where { 
+	?claim :macro-levelAssociation/rdf:subject ?_macro ;
+	       :macro-levelAssociation/rdf:object ?_macro_iri ;
+           :spatialContext ?capital .
+    ?country iisgv:capital ?capital ; 
     		geo:hasGeometry/geo:asWKT ?wkt
 } 
