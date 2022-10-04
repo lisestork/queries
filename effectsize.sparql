@@ -9,7 +9,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX iisgv: <https://iisg.amsterdam/vocab/>
-select distinct ?source ?variable where { 
+select distinct ?source ?measuredVariable ?_effectsize_iri where { 
 	?claim :dependentVariable/:measuredVariable ?variable ;
            :dependentVariable/:proxyFor thesoz:10048839 ; 
            :source/rdfs:label ?source ;
