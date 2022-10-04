@@ -10,7 +10,7 @@ PREFIX ex: <http://example.org/>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT DISTINCT ?eventDescription ?proxy2 ?proxy1 ?eventLabel ?eventStart ?eventEnd WHERE {
+SELECT DISTINCT ?eventDescription ?proxy1 ?eventLabel ?eventStart ?eventEnd WHERE {
   ?eventDescription ex:atTime ?time .	
   ?time time:hasBeginning/time:inXSDgYear ?eventStart . 
   ?time time:hasEnd/time:inXSDgYear ?eventEnd . 
