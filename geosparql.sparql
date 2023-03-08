@@ -1,0 +1,11 @@
+  PREFIX : <http://example.org/>
+  PREFIX thesoz: <http://lod.gesis.org/thesoz/concept/>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX iisgv: <https://iisg.amsterdam/vocab/>
+  select distinct ?wkt ?name where {
+      ?country iisgv:capital ?capital ;
+              geo:hasGeometry/geo:asWKT ?wkt ;
+              rdfs:label ?name
+  } limit 20
