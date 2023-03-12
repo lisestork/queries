@@ -1,5 +1,5 @@
 #+ endpoint: http://127.0.0.1:7200/repositories/Social-history
-#+ - dep_var:
+#+ - dep:
 #+    - https://concepts.sagepub.com/social-science/concept/family_size
 #+    - https://concepts.sagepub.com/social-science/concept/socioeconomic_status
 #+    - https://concepts.sagepub.com/social-science/concept/sex
@@ -18,7 +18,7 @@ PREFIX cdp: <https://data.cooperationdatabank.org/vocab/property/>
 select distinct * where {
     ?study rdf:type cdo:Study.
     ?study ex:situational_context ?context .
-    ?study cdp:independent_variable ?_dep_var_iri.
+    ?study cdp:independent_variable ?_dep_iri.
     ?context sem:hasPlace ?country .
     ?country geo:hasGeometry/geo:asWKT ?wkt ;
                            rdfs:label ?name
