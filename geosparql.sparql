@@ -1,13 +1,18 @@
 #+ endpoint: http://127.0.0.1:7200/repositories/Social-history
 
-PREFIX : <http://example.org/>
-PREFIX thesoz: <http://lod.gesis.org/thesoz/concept/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cdo: <https://data.cooperationdatabank.org/vocab/class/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX ex: <https://example.org/>
+PREFIX sem: <http://semanticweb.cs.vu.nl/2009/11/sem/>
 PREFIX iisgv: <https://iisg.amsterdam/vocab/>
-select distinct ?wkt ?name where {
-    ?country iisgv:capital ?capital ;
-            geo:hasGeometry/geo:asWKT ?wkt ;
-            rdfs:label ?name
-} limit 20
+ 
+select distinct * where {
+    ?study rdf:type cdo:Study.
+    ?study ex:situational_context ?context .
+    ?study ex:independent_variable {{dep_var}}
+    ?context sem:hasPlace ?country .
+    ?country geo:hasGeometry/geo:asWKT ?wkt ;
+                           rdfs:label ?name
+}
