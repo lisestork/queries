@@ -1,4 +1,10 @@
 #+ endpoint: http://127.0.0.1:7200/repositories/Social-history
+#+ - dep_var:
+#+    - https://concepts.sagepub.com/social-science/concept/family_size
+#+    - https://concepts.sagepub.com/social-science/concept/socioeconomic_status
+#+    - https://concepts.sagepub.com/social-science/concept/sex
+#+    - https://concepts.sagepub.com/social-science/concept/age_groups
+
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -7,11 +13,12 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX ex: <https://example.org/>
 PREFIX sem: <http://semanticweb.cs.vu.nl/2009/11/sem/>
 PREFIX iisgv: <https://iisg.amsterdam/vocab/>
- 
+PREFIX cdp: <https://data.cooperationdatabank.org/vocab/property/>
+
 select distinct * where {
     ?study rdf:type cdo:Study.
     ?study ex:situational_context ?context .
-    ?study ex:independent_variable ?_dep_var_iri.
+    ?study cdp:independent_variable ?_dep_var_iri.
     ?context sem:hasPlace ?country .
     ?country geo:hasGeometry/geo:asWKT ?wkt ;
                            rdfs:label ?name
