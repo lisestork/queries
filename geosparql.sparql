@@ -16,11 +16,12 @@ PREFIX sem: <http://semanticweb.cs.vu.nl/2009/11/sem/>
 PREFIX iisgv: <https://iisg.amsterdam/vocab/>
 PREFIX cdp: <https://data.cooperationdatabank.org/vocab/property/>
 
-select distinct * where {
+select distinct ?wkt ?name ?var where {
     ?study rdf:type cdo:Study.
     ?study ex:situational_context ?context .
     ?study cdp:independent_variable ?_dep_iri.
     ?context sem:hasPlace ?country .
     ?country geo:hasGeometry/geo:asWKT ?wkt ;
-                           rdfs:label ?name
+                           rdfs:label ?name.
+    ?study cdp:independent_variable ?var. 
 }
